@@ -1,11 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input } from '@angular/core';
 
 @Component({
-  selector: 'app-adding',
+  selector: 'adding',
   templateUrl: './adding.component.html',
   styleUrls: ['./adding.component.css']
 })
 export class AddingComponent implements OnInit {
+  @Input() No;
+  @Input() Fname;
+  @Input() Lname;
+  @Input() Prog;
+  @Input() Year;
 
   studentCollection: Array<object> =[];
   studentRecord: object;
@@ -37,11 +42,11 @@ export class AddingComponent implements OnInit {
       this.checkPatterns(this.studYr,studYearPattern)){
 
         this.studentRecord={
-          studNumber: this.studNo,
-          studFirstName: this.studFname,
-          studLastName: this.studLname,
-          studProgram: this.studProg,
-          studYear: this.studYr
+          No: this.studNo,
+          Fname: this.studFname,
+          Lname: this.studLname,
+          Prog: this.studProg,
+          Year: this.studYr
         };
         this.studentCollection.push
         (this.studentRecord);
